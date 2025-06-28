@@ -1,6 +1,12 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
-import { common } from "react-native-common-style";
+import { View, Text, ScrollView, StyleSheet } from "react-native";
+import {
+  common,
+  size,
+  width,
+  height,
+  isTablet,
+} from "react-native-common-style";
 
 const BasicUsageExample = () => {
   return (
@@ -9,16 +15,16 @@ const BasicUsageExample = () => {
       <View style={[common.p20, common.bgWhite, common.shadow1]}>
         <Text
           style={[
-            { fontSize: common.large },
+            { fontSize: size(24) },
             common.fontWeightBold,
             common.textCenter,
             common.mb10,
           ]}
         >
-          React Native Common Style
+          Welcome to React Native Common Style
         </Text>
-        <Text style={[common.medium, common.textCenter]}>
-          A comprehensive styling utility library
+        <Text style={[size(18), common.textCenter]}>
+          A comprehensive styling library
         </Text>
       </View>
 
@@ -54,11 +60,7 @@ const BasicUsageExample = () => {
           ]}
         >
           <Text
-            style={[
-              { fontSize: common.medium },
-              common.fontWeight500,
-              common.mb10,
-            ]}
+            style={[{ fontSize: size(16) }, common.fontWeight500, common.mb10]}
           >
             Spacing Utilities
           </Text>
@@ -304,9 +306,92 @@ const BasicUsageExample = () => {
             </View>
           </View>
         </View>
+
+        {/* Card with responsive sizing */}
+        <View style={[styles.card, { width: width * 0.9 }]}>
+          <Text style={[styles.cardTitle, { fontSize: size(20) }]}>
+            Responsive Card
+          </Text>
+          <Text style={[styles.cardText, { fontSize: size(16) }]}>
+            This card adapts to different screen sizes using the Metrics
+            functions.
+          </Text>
+
+          {/* Device info */}
+          <View style={styles.deviceInfo}>
+            <Text style={styles.infoText}>Screen Width: {width}px</Text>
+            <Text style={styles.infoText}>Screen Height: {height}px</Text>
+            <Text style={styles.infoText}>
+              Device Type: {isTablet ? "Tablet" : "Phone"}
+            </Text>
+          </View>
+        </View>
+
+        {/* Button with responsive text */}
+        <View style={styles.button}>
+          <Text style={[styles.buttonText, { fontSize: size(16) }]}>
+            Get Started
+          </Text>
+        </View>
       </View>
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    ...common.center,
+    ...common.p4,
+    backgroundColor: common.white,
+  },
+  title: {
+    fontWeight: "bold",
+    color: common.black,
+    marginBottom: common.m3,
+    textAlign: "center",
+  },
+  subtitle: {
+    color: common.black,
+    marginBottom: common.m4,
+    textAlign: "center",
+  },
+  card: {
+    backgroundColor: common.white,
+    ...common.roundedLg,
+    ...common.shadowMd,
+    ...common.p4,
+    ...common.mb4,
+  },
+  cardTitle: {
+    fontWeight: "600",
+    color: common.black,
+    marginBottom: common.m2,
+  },
+  cardText: {
+    color: common.black,
+    marginBottom: common.m3,
+  },
+  deviceInfo: {
+    backgroundColor: common.info,
+    ...common.p3,
+    ...common.roundedMd,
+  },
+  infoText: {
+    color: common.white,
+    fontSize: 14,
+    marginBottom: common.m1,
+  },
+  button: {
+    backgroundColor: common.success,
+    ...common.p3,
+    ...common.roundedMd,
+    ...common.center,
+  },
+  buttonText: {
+    color: common.white,
+    fontWeight: "600",
+  },
+});
 
 export default BasicUsageExample;

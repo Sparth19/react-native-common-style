@@ -209,6 +209,49 @@ Essential UI utilities for modern app development:
 <Text style={common.fontWeight600}>    // font-weight: 600
 ```
 
+### Responsive Metrics
+
+Device-aware responsive utilities for adaptive layouts:
+
+```typescript
+// Method 1: Direct imports (recommended for Metrics functions)
+import { size, width, height, isTablet } from 'react-native-common-style';
+
+// Responsive font sizing
+<Text style={{ fontSize: size(24) }}>Responsive Title</Text>
+<Text style={{ fontSize: size(18) }}>Responsive Subtitle</Text>
+<Text style={{ fontSize: size(16) }}>Responsive Body</Text>
+
+// Using rfv alias (same as size)
+<Text style={{ fontSize: rfv(20) }}>Responsive Text</Text>
+
+// Device dimensions
+<View style={{ width: width * 0.8 }}>80% of device width</View>
+<View style={{ height: height * 0.5 }}>50% of device height</View>
+
+// Device type detection
+{isTablet ? (
+  <View style={common.p4}>Tablet Layout</View>
+) : (
+  <View style={common.p2}>Phone Layout</View>
+)}
+
+// Responsive layout calculations
+<View style={{
+  paddingHorizontal: width * 0.05,
+  marginTop: height * 0.02
+}}>
+  Responsive Container
+</View>
+
+// Method 2: Via common object
+import { common } from 'react-native-common-style';
+
+<Text style={{ fontSize: common.size(24) }}>Responsive Title</Text>
+<View style={{ width: common.width * 0.8 }}>80% of device width</View>
+{common.isTablet && <View>Tablet specific content</View>}
+```
+
 ## 🎨 Common Patterns
 
 ### Card Component
@@ -389,6 +432,13 @@ const customStyles = {
 - **Font Weights**: `fontWeightNormal`, `fontWeightBold`, `fontWeight100-900`
 - **Text Transforms**: `uppercase`, `lowercase`, `capitalize`, `noTransform`
 - **Text Decoration**: `underline`, `lineThrough`, `noDecoration`
+
+### Responsive Metrics
+
+- **Responsive Font Sizing**: `size(fontSize)` - Calculate responsive font size based on device
+- **Device Dimensions**: `width`, `height` - Device screen dimensions (width is smaller, height is larger)
+- **Device Type**: `isTablet` - Boolean indicating if device is a tablet
+- **Responsive Font Alias**: `rfv(fontSize)` - Alias for size() function
 
 ## 🤝 Contributing
 
