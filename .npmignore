@@ -1,0 +1,73 @@
+# Source files (not needed in package)
+src/
+*.ts
+!index.ts
+
+# Development files
+.git/
+.gitignore
+.npmignore
+tsconfig.json
+package-lock.json
+yarn.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+test/
+tests/
+__tests__/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Documentation (except README)
+docs/
+*.md
+!README.md
+
+# Examples
+examples/
+
+# Build tools
+webpack.config.js
+rollup.config.js
+babel.config.js
+.eslintrc*
+.prettierrc*
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# Development dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Environment files
+.env*
+!.env.example 

@@ -1,0 +1,54 @@
+{
+  "name": "react-native-common-style",
+  "version": "1.0.0",
+  "description": "A comprehensive styling utility library for React Native applications with responsive design, spacing, typography, flexbox layouts, and UI utilities.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "styles",
+    "utility",
+    "common",
+    "spacing",
+    "typography",
+    "flexbox",
+    "layout",
+    "responsive",
+    "design-system",
+    "ui",
+    "css-in-js"
+  ],
+  "author": "Parth Shekhaliya",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sparth19/react-native-common-style.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sparth19/react-native-common-style/issues"
+  },
+  "homepage": "https://github.com/sparth19/react-native-common-style#readme",
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-native": ">=0.63.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-native": "^0.73.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
