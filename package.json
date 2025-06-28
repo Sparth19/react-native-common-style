@@ -1,6 +1,6 @@
 {
   "name": "react-native-common-style",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A comprehensive styling utility library for React Native applications with responsive design, spacing, typography, flexbox layouts, and UI utilities.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

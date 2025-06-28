@@ -53,7 +53,7 @@ import common from "react-native-common-style";
 
 ```typescript
 // Import everything
-import common from "react-native-common-style";
+import { common } from "react-native-common-style";
 
 // Import specific modules
 import {
