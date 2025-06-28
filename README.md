@@ -35,7 +35,13 @@ import common from "react-native-common-style";
 
 // Basic usage
 <View style={[common.flex1, common.centerRow, common.p4, common.bgWhite]}>
-  <Text style={[common.medium, common.textCenter, common.fontWeightBold]}>
+  <Text
+    style={[
+      { fontSize: common.medium },
+      common.textCenter,
+      common.fontWeightBold,
+    ]}
+  >
     Hello World
   </Text>
 </View>;
@@ -101,13 +107,13 @@ Font sizes scale responsively and follow a consistent hierarchy:
 
 ```typescript
 // Font sizes (responsive)
-<Text style={common.very_tiny}>    // 6px
-<Text style={common.tiny}>         // 8px
-<Text style={common.small}>        // 12px
-<Text style={common.medium}>       // 16px
-<Text style={common.regular}>      // 20px
-<Text style={common.large}>        // 24px
-<Text style={common.extra_large}>  // 48px
+<Text style={[{ fontSize: common.very_tiny }]}>    // 6px
+<Text style={[{ fontSize: common.tiny }]}>         // 8px
+<Text style={[{ fontSize: common.small }]}>        // 12px
+<Text style={[{ fontSize: common.medium }]}>       // 16px
+<Text style={[{ fontSize: common.regular }]}>      // 20px
+<Text style={[{ fontSize: common.large }]}>        // 24px
+<Text style={[{ fontSize: common.extra_large }]}>  // 48px
 
 // Text utilities
 <Text style={common.textCenter}>           // text-align: center
@@ -217,10 +223,10 @@ Essential UI utilities for modern app development:
     common.mb4,
   ]}
 >
-  <Text style={[common.large, common.fontWeightBold, common.mb2]}>
+  <Text style={[{ fontSize: common.large }, common.fontWeightBold, common.mb2]}>
     Card Title
   </Text>
-  <Text style={[common.medium]}>Card content goes here</Text>
+  <Text style={[{ fontSize: common.medium }]}>Card content goes here</Text>
 </View>
 ```
 
@@ -238,7 +244,7 @@ Essential UI utilities for modern app development:
 >
   <Text
     style={[
-      common.medium,
+      { fontSize: common.medium },
       common.textCenter,
       common.fontWeight600,
       common.uppercase,
@@ -262,7 +268,7 @@ Essential UI utilities for modern app development:
       common.m4,
     ]}
   >
-    <Text style={common.large}>Modal Content</Text>
+    <Text style={[{ fontSize: common.large }]}>Modal Content</Text>
   </View>
 </View>
 ```
@@ -280,8 +286,10 @@ Essential UI utilities for modern app development:
 >
   <View style={[common.w12, common.h12, common.bgInfo, common.rounded]} />
   <View style={[common.flex1, common.ml3]}>
-    <Text style={[common.medium, common.fontWeightBold]}>Item Title</Text>
-    <Text style={[common.small]}>Item description</Text>
+    <Text style={[{ fontSize: common.medium }, common.fontWeightBold]}>
+      Item Title
+    </Text>
+    <Text style={[{ fontSize: common.small }]}>Item description</Text>
   </View>
 </View>
 ```

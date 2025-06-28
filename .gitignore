@@ -12,6 +12,7 @@ lib/
 *.d.ts
 !index.js
 !index.d.ts
+!examples/*.js
 
 # TypeScript
 *.tsbuildinfo
